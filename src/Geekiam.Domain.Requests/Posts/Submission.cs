@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Geekiam.Domain.Requests.Posts;
 
 public class Submission

@@ -1,3 +1,5 @@
+using System;
+
 namespace Geekiam.Domain.Requests.Posts;
 
 public class Detail
