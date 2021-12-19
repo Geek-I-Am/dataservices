@@ -1,0 +1,12 @@
+/home/gary/threenine/geekiam/dataservice/src/Geekiam/bin/Debug/net6.0/Geekiam.deps.json
+/home/gary/threenine/geekiam/dataservice/src/Geekiam/bin/Debug/net6.0/Geekiam.dll
+/home/gary/threenine/geekiam/dataservice/src/Geekiam/bin/Debug/net6.0/ref/Geekiam.dll
+/home/gary/threenine/geekiam/dataservice/src/Geekiam/bin/Debug/net6.0/Geekiam.pdb
+/home/gary/threenine/geekiam/dataservice/src/Geekiam/obj/Debug/net6.0/Geekiam.csproj.AssemblyReference.cache
+/home/gary/threenine/geekiam/dataservice/src/Geekiam/obj/Debug/net6.0/Geekiam.GeneratedMSBuildEditorConfig.editorconfig
+/home/gary/threenine/geekiam/dataservice/src/Geekiam/obj/Debug/net6.0/Geekiam.AssemblyInfoInputs.cache
+/home/gary/threenine/geekiam/dataservice/src/Geekiam/obj/Debug/net6.0/Geekiam.AssemblyInfo.cs
+/home/gary/threenine/geekiam/dataservice/src/Geekiam/obj/Debug/net6.0/Geekiam.csproj.CoreCompileInputs.cache
+/home/gary/threenine/geekiam/dataservice/src/Geekiam/obj/Debug/net6.0/Geekiam.dll
+/home/gary/threenine/geekiam/dataservice/src/Geekiam/obj/Debug/net6.0/ref/Geekiam.dll
+/home/gary/threenine/geekiam/dataservice/src/Geekiam/obj/Debug/net6.0/Geekiam.pdb

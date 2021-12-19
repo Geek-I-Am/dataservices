@@ -1,0 +1,17 @@
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/bin/Debug/net6.0/Geekiam.Domain.Mapping.deps.json
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/bin/Debug/net6.0/Geekiam.Domain.Mapping.dll
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/bin/Debug/net6.0/ref/Geekiam.Domain.Mapping.dll
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/bin/Debug/net6.0/Geekiam.Domain.Mapping.pdb
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/bin/Debug/net6.0/Geekiam.Domain.Requests.dll
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/bin/Debug/net6.0/Geekiam.Domain.Responses.dll
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/bin/Debug/net6.0/Geekiam.Domain.Requests.pdb
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/bin/Debug/net6.0/Geekiam.Domain.Responses.pdb
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/obj/Debug/net6.0/Geekiam.Domain.Mapping.csproj.AssemblyReference.cache
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/obj/Debug/net6.0/Geekiam.Domain.Mapping.GeneratedMSBuildEditorConfig.editorconfig
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/obj/Debug/net6.0/Geekiam.Domain.Mapping.AssemblyInfoInputs.cache
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/obj/Debug/net6.0/Geekiam.Domain.Mapping.AssemblyInfo.cs
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/obj/Debug/net6.0/Geekiam.Domain.Mapping.csproj.CoreCompileInputs.cache
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/obj/Debug/net6.0/Geekiam.Domain.Mapping.csproj.CopyComplete
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/obj/Debug/net6.0/Geekiam.Domain.Mapping.dll
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/obj/Debug/net6.0/ref/Geekiam.Domain.Mapping.dll
+/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/obj/Debug/net6.0/Geekiam.Domain.Mapping.pdb

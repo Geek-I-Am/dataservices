@@ -1,0 +1,427 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/gary/threenine/geekiam/dataservice/tests/Geekiam.Data.Services.Integration.Tests/Geekiam.Data.Services.Integration.Tests.csproj": {}
+  },
+  "projects": {
+    "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Data.Services/Geekiam.Data.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Data.Services/Geekiam.Data.Services.csproj",
+        "projectName": "Geekiam.Data.Services",
+        "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Data.Services/Geekiam.Data.Services.csproj",
+        "packagesPath": "/home/gary/.nuget/packages/",
+        "outputPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Data.Services/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gary/threenine/geekiam/dataservice/NuGet.Config",
+          "/home/gary/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/Geek-I-Am/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/Geekiam.Domain.Mapping.csproj": {
+                "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/Geekiam.Domain.Mapping.csproj"
+              },
+              "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Requests/Geekiam.Domain.Requests.csproj": {
+                "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Requests/Geekiam.Domain.Requests.csproj"
+              },
+              "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Responses/Geekiam.Domain.Responses.csproj": {
+                "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Responses/Geekiam.Domain.Responses.csproj"
+              },
+              "/home/gary/threenine/geekiam/dataservice/src/Geekiam/Geekiam.csproj": {
+                "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam/Geekiam.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Geek.Database": {
+              "target": "Package",
+              "version": "[0.1.7, )"
+            },
+            "Geek.Database.Entities": {
+              "target": "Package",
+              "version": "[0.1.7, )"
+            },
+            "Threenine.Data": {
+              "target": "Package",
+              "version": "[2.1.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/Geekiam.Domain.Mapping.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/Geekiam.Domain.Mapping.csproj",
+        "projectName": "Geekiam.Domain.Mapping",
+        "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/Geekiam.Domain.Mapping.csproj",
+        "packagesPath": "/home/gary/.nuget/packages/",
+        "outputPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gary/threenine/geekiam/dataservice/NuGet.Config",
+          "/home/gary/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/Geek-I-Am/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Requests/Geekiam.Domain.Requests.csproj": {
+                "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Requests/Geekiam.Domain.Requests.csproj"
+              },
+              "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Responses/Geekiam.Domain.Responses.csproj": {
+                "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Responses/Geekiam.Domain.Responses.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Geek.Database.Entities": {
+              "target": "Package",
+              "version": "[0.1.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Requests/Geekiam.Domain.Requests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Requests/Geekiam.Domain.Requests.csproj",
+        "projectName": "Geekiam.Domain.Requests",
+        "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Requests/Geekiam.Domain.Requests.csproj",
+        "packagesPath": "/home/gary/.nuget/packages/",
+        "outputPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Requests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gary/threenine/geekiam/dataservice/NuGet.Config",
+          "/home/gary/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/Geek-I-Am/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Responses/Geekiam.Domain.Responses.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Responses/Geekiam.Domain.Responses.csproj",
+        "projectName": "Geekiam.Domain.Responses",
+        "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Responses/Geekiam.Domain.Responses.csproj",
+        "packagesPath": "/home/gary/.nuget/packages/",
+        "outputPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Responses/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gary/threenine/geekiam/dataservice/NuGet.Config",
+          "/home/gary/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/Geek-I-Am/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/gary/threenine/geekiam/dataservice/src/Geekiam/Geekiam.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gary/threenine/geekiam/dataservice/src/Geekiam/Geekiam.csproj",
+        "projectName": "Geekiam",
+        "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam/Geekiam.csproj",
+        "packagesPath": "/home/gary/.nuget/packages/",
+        "outputPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gary/threenine/geekiam/dataservice/NuGet.Config",
+          "/home/gary/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/Geek-I-Am/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/gary/threenine/geekiam/dataservice/tests/Geekiam.Data.Services.Integration.Tests/Geekiam.Data.Services.Integration.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gary/threenine/geekiam/dataservice/tests/Geekiam.Data.Services.Integration.Tests/Geekiam.Data.Services.Integration.Tests.csproj",
+        "projectName": "Geekiam.Data.Services.Integration.Tests",
+        "projectPath": "/home/gary/threenine/geekiam/dataservice/tests/Geekiam.Data.Services.Integration.Tests/Geekiam.Data.Services.Integration.Tests.csproj",
+        "packagesPath": "/home/gary/.nuget/packages/",
+        "outputPath": "/home/gary/threenine/geekiam/dataservice/tests/Geekiam.Data.Services.Integration.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gary/threenine/geekiam/dataservice/NuGet.Config",
+          "/home/gary/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/Geek-I-Am/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Data.Services/Geekiam.Data.Services.csproj": {
+                "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Data.Services/Geekiam.Data.Services.csproj"
+              },
+              "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Requests/Geekiam.Domain.Requests.csproj": {
+                "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Requests/Geekiam.Domain.Requests.csproj"
+              },
+              "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Responses/Geekiam.Domain.Responses.csproj": {
+                "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Responses/Geekiam.Domain.Responses.csproj"
+              },
+              "/home/gary/threenine/geekiam/dataservice/src/Geekiam/Geekiam.csproj": {
+                "projectPath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam/Geekiam.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Geek.Database": {
+              "target": "Package",
+              "version": "[0.1.7, )"
+            },
+            "Geek.Database.Entities": {
+              "target": "Package",
+              "version": "[0.1.7, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.11.0, )"
+            },
+            "Shouldly": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="10.1.1" />
+      <PackageReference Include="Geek.Database.Entities" Version="0.1.7" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Geekiam.Domain.Requests\Geekiam.Domain.Requests.csproj" />
+      <ProjectReference Include="..\Geekiam.Domain.Responses\Geekiam.Domain.Responses.csproj" />
+    </ItemGroup>
+
+</Project>

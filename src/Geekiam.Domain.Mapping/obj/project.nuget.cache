@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "kkf7jzwvFb+Ghz4WiHIrsavNqoAGJsE4r3FHI5ak+zHRg3h6YLEsUOvnzRENBY9wYyVMy4U0lmJuGg5rnDXAzg==",
+  "success": true,
+  "projectFilePath": "/home/gary/threenine/geekiam/dataservice/src/Geekiam.Domain.Mapping/Geekiam.Domain.Mapping.csproj",
+  "expectedPackageFiles": [
+    "/home/gary/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/home/gary/.nuget/packages/geek.database.entities/0.1.7/geek.database.entities.0.1.7.nupkg.sha512",
+    "/home/gary/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/home/gary/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
