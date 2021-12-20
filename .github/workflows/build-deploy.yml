@@ -3,12 +3,12 @@ name: nuget-build-deploy
 on:
   push:
     branches:
-      - main
+      - master
       - release/*
       - feature/*
   pull_request:
     branches: 
-      - main
+      - master
       - release/*
       - feature/*
 
