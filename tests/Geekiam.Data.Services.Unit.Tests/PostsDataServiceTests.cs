@@ -24,7 +24,7 @@ public class PostsDataServiceTests
     [InlineData("three  little  birds", "ThreeLittleBirds")]
     public void ShouldTransformTags(string testString, string expected)
     {
-        var result = _classUnderTest.TransformTag(testString);
+        var result = PostsDataService.TransformTag(testString);
         
         result.ShouldBeEquivalentTo(expected);
     }
@@ -36,7 +36,7 @@ public class PostsDataServiceTests
     [InlineData("three  little  birds", "three-little-birds")]
     public void ShouldTransformPermalink(string testString, string expected)
     {
-        var result = _classUnderTest.TransformPermalink(testString);
+        var result = PostsDataService.TransformPermalink(testString);
         
         result.ShouldBeEquivalentTo(expected);
     }

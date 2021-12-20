@@ -23,24 +23,35 @@ public class PostsDataService : IDataService<Submission, Submitted>
     {
         var article = _mapper.Map<Articles>(aggregate.Article);
         var articlesRepository = _unitOfWork.GetRepository<Articles>();
-        articlesRepository.Insert(article);
+        articlesRepository.Insert(article.Created());
         await _unitOfWork.CommitAsync();
+        SaveTags(aggregate.Tags.ToList(), article.Id);
+      
         return new Submitted() { Article = new Article(article.Title, new Uri(article.Url)) };
     }
 
-    internal void SaveTags(List<string> tags)
+    internal void SaveTags(List<string> tags, Guid articleId)
     {
+        var tagsRepository = _unitOfWork.GetRepository<Tags>();
+        var articleTagsRepoistory = _unitOfWork.GetRepository<ArticleTags>();
         tags.ForEach(tag =>
         {
-            var newtag = TransformTag(tag);
-            var permalink = TransformPermalink(tag);
+            var tagName = TransformTag(tag);
+            var tagLink = TransformPermalink(tag);
+
+            var newTag = new
+                Tags { Name = tagName, Permalink = tagLink , Created = DateTime.Now};
             
-            
+           var articleTag =  tagsRepository.InsertNotExists(x => x.Name == tagName, newTag);
+           _unitOfWork.Commit();
+            var newArticleTags = new ArticleTags { ArticleId = articleId, TagId = articleTag.Id };
+            articleTagsRepoistory.Insert(newArticleTags);
+            _unitOfWork.Commit();
 
         });
     }
 
-    internal string TransformTag(string tag)
+    internal static string TransformTag(string tag)
     {
         var sb = new StringBuilder();
 
@@ -55,7 +66,7 @@ public class PostsDataService : IDataService<Submission, Submitted>
         return sb.ToString();
     }
     
-    internal string TransformPermalink(string tag)
+    internal static string TransformPermalink(string tag)
     {
         var sb = new StringBuilder();
 
@@ -63,7 +74,7 @@ public class PostsDataService : IDataService<Submission, Submitted>
 
         if (words.Length < 1) return sb.Append(tag.ToLower().Trim()).ToString();
 
-        for (int i = 0; i < words.Length; i++)
+        for (var i = 0; i < words.Length; i++)
         {
             if (i == words.Length)
             {

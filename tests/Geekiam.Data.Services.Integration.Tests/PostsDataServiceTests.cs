@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FizzWare.NBuilder;
@@ -37,11 +38,29 @@ public class PostsDataServiceTests
         result.ShouldNotBeNull();
     }
 
+    [Fact]
+    public async Task ShouldInsertNewArticleWithExistingTags()
+    {
+        var result = await _classUnderTest.Process(TestSubmissionWithExistingTags);
+        result.ShouldNotBeNull();
+    }
+
     private static Submission TestSubmission => Builder<Submission>.CreateNew()
             .With(x => x.Article = Builder<Detail>.CreateNew()
                 .With(x => x.Title = $"Title{Guid.NewGuid().ToString()}")
                 .With(x => x.Url = new Uri($"https://{Guid.NewGuid().ToString()}"))
+            
                 .Build())
+            .With(x => x.Tags = new List<string>{ $"tag {Guid.NewGuid().ToString()}", $"tag {Guid.NewGuid().ToString()}"})
             .Build();
+    
+      private static Submission TestSubmissionWithExistingTags => Builder<Submission>.CreateNew()
+                .With(x => x.Article = Builder<Detail>.CreateNew()
+                    .With(x => x.Title = $"Title{Guid.NewGuid().ToString()}")
+                    .With(x => x.Url = new Uri($"https://{Guid.NewGuid().ToString()}"))
+                
+                    .Build())
+                .With(x => x.Tags = new List<string>{ "tag B2b76c22-1C92-4159-8Fcb-416F1c5854b5"})
+                .Build();
     
 }
