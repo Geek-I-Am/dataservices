@@ -28,7 +28,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\Geekiam.Data.Services\Geekiam.Data.Services.csproj" />
-      <ProjectReference Include="..\..\src\Geekiam.Domain.Mapping\Geekiam.Domain.Mapping.csproj" />
     </ItemGroup>
     
 

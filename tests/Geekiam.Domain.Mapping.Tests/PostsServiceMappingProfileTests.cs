@@ -1,6 +1,6 @@
 using AutoMapper;
 using FizzWare.NBuilder;
-using Geek.Database.Entities;
+using Geekiam.Database.Entities;
 using Geekiam.Domain.Requests.Posts;
 using Shouldly;
 using Xunit;

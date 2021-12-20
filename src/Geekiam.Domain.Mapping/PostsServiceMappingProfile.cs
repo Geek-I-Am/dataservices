@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Geek.Database.Entities;
+using Geekiam.Database.Entities;
 using Geekiam.Domain.Requests.Posts;
 
 namespace Geekiam.Domain.Mapping;
