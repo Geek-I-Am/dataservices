@@ -1,5 +1,5 @@
 using System;
-using Geek.Database;
+using Geekiam.Database;
 using Microsoft.EntityFrameworkCore;
 
 namespace Geekiam.Data.Services.Integration.Tests.TestFixtures;

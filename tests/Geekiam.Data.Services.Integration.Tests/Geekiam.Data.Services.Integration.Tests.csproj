@@ -8,10 +8,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Geek.Database" Version="0.1.7" />
-        <PackageReference Include="Geek.Database.Entities" Version="0.1.7" />
-           <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+        <PackageReference Include="AutoMapper" Version="10.1.1" />
+        <PackageReference Include="Geekiam.Database" Version="0.1.8" />
+        <PackageReference Include="Geekiam.Database.Entities" Version="0.1.8" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+        <PackageReference Include="NBuilder" Version="6.1.0" />
         <PackageReference Include="Shouldly" Version="4.0.3" />
+        <PackageReference Include="Threenine.Data" Version="2.1.6" />
         <PackageReference Include="xunit" Version="2.4.1" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -25,9 +28,10 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\Geekiam.Data.Services\Geekiam.Data.Services.csproj" />
-      <ProjectReference Include="..\..\src\Geekiam.Domain.Requests\Geekiam.Domain.Requests.csproj" />
-      <ProjectReference Include="..\..\src\Geekiam.Domain.Responses\Geekiam.Domain.Responses.csproj" />
-      <ProjectReference Include="..\..\src\Geekiam\Geekiam.csproj" />
+      <ProjectReference Include="..\..\src\Geekiam.Domain.Mapping\Geekiam.Domain.Mapping.csproj" />
     </ItemGroup>
+    
+
+  
 
 </Project>

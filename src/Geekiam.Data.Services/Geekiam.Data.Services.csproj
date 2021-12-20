@@ -7,16 +7,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Geekiam.Domain.Mapping\Geekiam.Domain.Mapping.csproj" />
-      <ProjectReference Include="..\Geekiam.Domain.Requests\Geekiam.Domain.Requests.csproj" />
+       <ProjectReference Include="..\Geekiam.Domain.Requests\Geekiam.Domain.Requests.csproj" />
       <ProjectReference Include="..\Geekiam.Domain.Responses\Geekiam.Domain.Responses.csproj" />
       <ProjectReference Include="..\Geekiam\Geekiam.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="10.1.1" />
-      <PackageReference Include="Geek.Database" Version="0.1.7" />
       <PackageReference Include="Geek.Database.Entities" Version="0.1.7" />
+      <PackageReference Include="Geekiam.Database" Version="0.1.8" />
+      <PackageReference Include="Geekiam.Database.Entities" Version="0.1.8" />
       <PackageReference Include="Threenine.Data" Version="2.1.6" />
     </ItemGroup>
 

@@ -1,6 +1,11 @@
-using Geek.Database;
+using System;
+using System.Threading.Tasks;
+using AutoMapper;
+using FizzWare.NBuilder;
 using Geekiam.Data.Services.Integration.Tests.TestFixtures;
-using Geekiam.Domain.Responses.Posts;
+using Geekiam.Database;
+using Geekiam.Domain.Mapping;
+using Geekiam.Domain.Requests.Posts;
 using Shouldly;
 using Threenine.Data;
 using Xunit;
@@ -10,22 +15,33 @@ namespace Geekiam.Data.Services.Integration.Tests;
 [Collection(GlobalTestStrings.TestFixtureName)]
 public class PostsDataServiceTests
 {
-    private readonly SqlLiteTestFixture _fixture;
-
-    private readonly IUnitOfWork _unitOfWork;
+    private readonly PostsDataService _classUnderTest;
+    
     
 
     public PostsDataServiceTests(SqlLiteTestFixture fixture)
     {
-        _fixture = fixture;
-        _unitOfWork = new UnitOfWork<GeekContext>(_fixture.Context);
+        IUnitOfWork unitOfWork = new UnitOfWork<GeekContext>(fixture.Context);
+        
+        var mapperConfiguration = new MapperConfiguration(configuration => configuration.AddProfile<PostsServiceMappingProfile>());
+       mapperConfiguration.AssertConfigurationIsValid();
+        var mapper = mapperConfiguration.CreateMapper();
+
+        _classUnderTest = new PostsDataService(mapper, unitOfWork);
     }
+    
     [Fact]
-    public void Test1()
+    public async Task ShouldInsertNewArticle()
     {
-        var repo = _unitOfWork.GetRepository<Article>();
-
-        repo.ShouldNotBeNull();
-
+        var result = await _classUnderTest.Process(TestSubmission);
+        result.ShouldNotBeNull();
     }
+
+    private static Submission TestSubmission => Builder<Submission>.CreateNew()
+            .With(x => x.Article = Builder<Detail>.CreateNew()
+                .With(x => x.Title = $"Title{Guid.NewGuid().ToString()}")
+                .With(x => x.Url = new Uri($"https://{Guid.NewGuid().ToString()}"))
+                .Build())
+            .Build();
+    
 }

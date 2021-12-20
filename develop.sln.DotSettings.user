@@ -1,6 +1,13 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bcf03152_002Db0e0_002D4f06_002Da2a4_002Dc5a1e04b9b03/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bcf03152_002Db0e0_002D4f06_002Da2a4_002Dc5a1e04b9b03/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::A78494B8-A7FA-48BB-9F09-C62A242F2E6C::net6.0::Geekiam.Domain.Mapping.Tests.PostsServiceMappingProfileTests.ShouldMapSubmissionToArticles&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::7050ADED-16CF-4F9D-A1FB-AD3C8851C742::net6.0::Geekiam.Data.Services.Integration.Tests.PostsDataServiceTests.Test1&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c4804b6d_002D1bd4_002D4dbd_002D9f5d_002D5f2ee736265c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1 #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::7050ADED-16CF-4F9D-A1FB-AD3C8851C742::net6.0::Geekiam.Data.Services.Integration.Tests.PostsDataServiceTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::A78494B8-A7FA-48BB-9F09-C62A242F2E6C::net6.0::Geekiam.Domain.Mapping.Tests.PostsServiceMappingProfileTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

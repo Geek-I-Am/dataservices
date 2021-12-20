@@ -9,6 +9,7 @@
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="10.1.1" />
       <PackageReference Include="Geek.Database.Entities" Version="0.1.7" />
+      <PackageReference Include="Geekiam.Database.Entities" Version="0.1.8" />
     </ItemGroup>
 
     <ItemGroup>
