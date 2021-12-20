@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geekiam.Domain.Mapping", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geekiam.Domain.Mapping.Tests", "tests\Geekiam.Domain.Mapping.Tests\Geekiam.Domain.Mapping.Tests.csproj", "{A78494B8-A7FA-48BB-9F09-C62A242F2E6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geekiam.Data.Services.Unit.Tests", "tests\Geekiam.Data.Services.Unit.Tests\Geekiam.Data.Services.Unit.Tests.csproj", "{4CB20360-68A8-43E3-8744-F3B194C1AA5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,9 +58,14 @@ Global
 		{A78494B8-A7FA-48BB-9F09-C62A242F2E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A78494B8-A7FA-48BB-9F09-C62A242F2E6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A78494B8-A7FA-48BB-9F09-C62A242F2E6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CB20360-68A8-43E3-8744-F3B194C1AA5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CB20360-68A8-43E3-8744-F3B194C1AA5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CB20360-68A8-43E3-8744-F3B194C1AA5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CB20360-68A8-43E3-8744-F3B194C1AA5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7050ADED-16CF-4F9D-A1FB-AD3C8851C742} = {562BFFF0-5CAE-4122-8CA0-995B7072B398}
 		{A78494B8-A7FA-48BB-9F09-C62A242F2E6C} = {562BFFF0-5CAE-4122-8CA0-995B7072B398}
+		{4CB20360-68A8-43E3-8744-F3B194C1AA5D} = {562BFFF0-5CAE-4122-8CA0-995B7072B398}
 	EndGlobalSection
 EndGlobal
