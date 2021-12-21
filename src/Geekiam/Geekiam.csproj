@@ -16,7 +16,7 @@
         <RepositoryUrl>https://github.com/Geek-I-Am/dataservices</RepositoryUrl>
         <Copyright>Copyright © 2005 - 2021 Three Nine Consulting Limited</Copyright>
         <PackageProjectUrl>https://geekiam.io</PackageProjectUrl>
-        <PackageIconUrl>https://static.threenine.co.uk/threenine_icon.png</PackageIconUrl>
+        <PackageIconUrl>https://static.threenine.co.uk/geekiam.png</PackageIconUrl>
     </PropertyGroup>
 
 </Project>
