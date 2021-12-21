@@ -17,9 +17,10 @@ public class PostsDataService : IDataService<Submission, Submitted>
     private readonly IMapper _mapper;
     private readonly IUnitOfWork _unitOfWork;
 
-    public PostsDataService( IUnitOfWork unitOfWork)
+    public PostsDataService(IUnitOfWork unitOfWork)
     {
-        var mapperConfiguration = new MapperConfiguration(configuration => configuration.AddProfile<PostsServiceMappingProfile>());
+        var mapperConfiguration =
+            new MapperConfiguration(configuration => configuration.AddProfile<PostsServiceMappingProfile>());
         mapperConfiguration.AssertConfigurationIsValid();
         _mapper = mapperConfiguration.CreateMapper();
         _unitOfWork = unitOfWork;
@@ -31,8 +32,8 @@ public class PostsDataService : IDataService<Submission, Submitted>
         var articlesRepository = _unitOfWork.GetRepository<Articles>();
         articlesRepository.Insert(article.Created());
         await _unitOfWork.CommitAsync();
-       if(aggregate.Tags != null) SaveTags(aggregate.Tags.ToList(), article.Id);
-       if(aggregate.Categories != null) SaveCategories(aggregate.Categories.ToList(), article.Id);
+        if (aggregate.Tags != null) SaveTags(aggregate.Tags.ToList(), article.Id);
+        if (aggregate.Categories != null) SaveCategories(aggregate.Categories.ToList(), article.Id);
 
         return new Submitted() { Article = new Article(article.Title, new Uri(article.Url)) };
     }

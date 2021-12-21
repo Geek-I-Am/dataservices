@@ -17,15 +17,10 @@ namespace Geekiam.Data.Services.Integration.Tests;
 public class PostsDataServiceTests
 {
     private readonly PostsDataService _classUnderTest;
-    
-    
 
     public PostsDataServiceTests(SqlLiteTestFixture fixture)
     {
         IUnitOfWork unitOfWork = new UnitOfWork<GeekContext>(fixture.Context);
-        
-       
-
         _classUnderTest = new PostsDataService(unitOfWork);
     }
     
@@ -47,7 +42,6 @@ public class PostsDataServiceTests
             .With(x => x.Article = Builder<Detail>.CreateNew()
                 .With(x => x.Title = $"Title{Guid.NewGuid().ToString()}")
                 .With(x => x.Url = new Uri($"https://{Guid.NewGuid().ToString()}"))
-            
                 .Build())
             .With(x => x.Tags = new List<string>{ $"tag {Guid.NewGuid().ToString()}", $"tag {Guid.NewGuid().ToString()}"})
             .With(x => x.Categories = new List<string>{ $"category {Guid.NewGuid().ToString()}", $"category {Guid.NewGuid().ToString()}"})
@@ -57,7 +51,6 @@ public class PostsDataServiceTests
                 .With(x => x.Article = Builder<Detail>.CreateNew()
                     .With(x => x.Title = $"Title{Guid.NewGuid().ToString()}")
                     .With(x => x.Url = new Uri($"https://{Guid.NewGuid().ToString()}"))
-                
                     .Build())
                 .With(x => x.Tags = new List<string>{ "tag B2b76c22-1C92-4159-8Fcb-416F1c5854b5"})
                 .Build();

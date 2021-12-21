@@ -1,4 +1,3 @@
-using AutoMapper;
 using Moq;
 using Shouldly;
 using Threenine.Data;
@@ -36,6 +35,18 @@ public class PostsDataServiceTests
     public void ShouldTransformPermalink(string testString, string expected)
     {
         var result = PostsDataService.TransformPermalink(testString);
+        
+        result.ShouldBeEquivalentTo(expected);
+    }
+    
+    [Theory]
+    [InlineData("poo poo", "Poo Poo")]
+    [InlineData("software development", "Software Development")]
+    [InlineData("geek i am", "Geek I Am")]
+    [InlineData("three  little  birds", "Three Little Birds")]
+    public void ShouldTransformCategories(string testString, string expected)
+    {
+        var result = PostsDataService.TransformCategory(testString);
         
         result.ShouldBeEquivalentTo(expected);
     }
