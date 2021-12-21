@@ -52,6 +52,7 @@ public class PostsDataServiceTests
             
                 .Build())
             .With(x => x.Tags = new List<string>{ $"tag {Guid.NewGuid().ToString()}", $"tag {Guid.NewGuid().ToString()}"})
+            .With(x => x.Categories = new List<string>{ $"category {Guid.NewGuid().ToString()}", $"category {Guid.NewGuid().ToString()}"})
             .Build();
     
       private static Submission TestSubmissionWithExistingTags => Builder<Submission>.CreateNew()
