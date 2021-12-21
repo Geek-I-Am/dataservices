@@ -9,12 +9,11 @@ namespace Geekiam.Data.Services.Unit.Tests;
 public class PostsDataServiceTests
 {
     private PostsDataService _classUnderTest;
-    private Mock<IMapper> _mapper = new();
     private Mock<IUnitOfWork> _unitOfWork = new();
 
     public PostsDataServiceTests()
     {
-        _classUnderTest = new PostsDataService(_mapper.Object, _unitOfWork.Object);
+        _classUnderTest = new PostsDataService(_unitOfWork.Object);
     }
     
     [Theory]

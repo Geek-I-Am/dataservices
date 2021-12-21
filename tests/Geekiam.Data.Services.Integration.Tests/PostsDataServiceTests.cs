@@ -24,11 +24,9 @@ public class PostsDataServiceTests
     {
         IUnitOfWork unitOfWork = new UnitOfWork<GeekContext>(fixture.Context);
         
-        var mapperConfiguration = new MapperConfiguration(configuration => configuration.AddProfile<PostsServiceMappingProfile>());
-       mapperConfiguration.AssertConfigurationIsValid();
-        var mapper = mapperConfiguration.CreateMapper();
+       
 
-        _classUnderTest = new PostsDataService(mapper, unitOfWork);
+        _classUnderTest = new PostsDataService(unitOfWork);
     }
     
     [Fact]

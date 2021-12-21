@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using AutoMapper;
 using Geekiam.Database.Entities;
+using Geekiam.Domain.Mapping;
 using Geekiam.Domain.Requests.Posts;
 using Geekiam.Domain.Responses.Posts;
 using Threenine.Data;
@@ -16,9 +17,11 @@ public class PostsDataService : IDataService<Submission, Submitted>
     private readonly IMapper _mapper;
     private readonly IUnitOfWork _unitOfWork;
 
-    public PostsDataService(IMapper mapper, IUnitOfWork unitOfWork)
+    public PostsDataService( IUnitOfWork unitOfWork)
     {
-        _mapper = mapper;
+        var mapperConfiguration = new MapperConfiguration(configuration => configuration.AddProfile<PostsServiceMappingProfile>());
+        mapperConfiguration.AssertConfigurationIsValid();
+        _mapper = mapperConfiguration.CreateMapper();
         _unitOfWork = unitOfWork;
     }
 
