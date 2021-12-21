@@ -36,7 +36,12 @@ jobs:
       with:
           useConfigFile: true
           configFilePath: ./.github/gitversion.yml  
-          
+    - name: Adjust NuGet Config Credentials
+      run: |
+        rm -f ./nuget.config
+        mv nuget.ci.config nuget.config
+        echo $(sed -e "s/\${USER}/${{ secrets.REGISTRY_USER }}/" -e "s@\${PAT}@${{  github.token }}@" nuget.config) >nuget.config
+        
     - name: Restore dependencies
       run: dotnet restore
       
