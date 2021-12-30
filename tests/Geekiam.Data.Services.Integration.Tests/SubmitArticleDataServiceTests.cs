@@ -14,14 +14,14 @@ using Xunit;
 namespace Geekiam.Data.Services.Integration.Tests;
 
 [Collection(GlobalTestStrings.TestFixtureName)]
-public class PostsDataServiceTests
+public class SubmitArticleDataServiceTests
 {
-    private readonly PostsDataService _classUnderTest;
+    private readonly SubmitArticleDataService _classUnderTest;
 
-    public PostsDataServiceTests(SqlLiteTestFixture fixture)
+    public SubmitArticleDataServiceTests(SqlLiteTestFixture fixture)
     {
-        IUnitOfWork unitOfWork = new UnitOfWork<GeekContext>(fixture.Context);
-        _classUnderTest = new PostsDataService(unitOfWork);
+        IUnitOfWork unitOfWork = new UnitOfWork<GeekiamContext>(fixture.Context);
+        _classUnderTest = new SubmitArticleDataService(unitOfWork);
     }
     
     [Fact]
@@ -39,20 +39,17 @@ public class PostsDataServiceTests
     }
 
     private static Submission TestSubmission => Builder<Submission>.CreateNew()
-            .With(x => x.Article = Builder<Detail>.CreateNew()
-                .With(x => x.Title = $"Title{Guid.NewGuid().ToString()}")
-                .With(x => x.Url = new Uri($"https://{Guid.NewGuid().ToString()}"))
+            .With(x => x.Article = Builder<Article>.CreateNew()
                 .Build())
-            .With(x => x.Tags = new List<string>{ $"tag {Guid.NewGuid().ToString()}", $"tag {Guid.NewGuid().ToString()}"})
-            .With(x => x.Categories = new List<string>{ $"category {Guid.NewGuid().ToString()}", $"category {Guid.NewGuid().ToString()}"})
+            .With(x => x.Metadata.Tags = new List<string>{ $"tag {Guid.NewGuid().ToString()}", $"tag {Guid.NewGuid().ToString()}"})
+            .With(x => x.Metadata.Categories = new List<string>{ $"category {Guid.NewGuid().ToString()}", $"category {Guid.NewGuid().ToString()}"})
             .Build();
     
       private static Submission TestSubmissionWithExistingTags => Builder<Submission>.CreateNew()
-                .With(x => x.Article = Builder<Detail>.CreateNew()
-                    .With(x => x.Title = $"Title{Guid.NewGuid().ToString()}")
-                    .With(x => x.Url = new Uri($"https://{Guid.NewGuid().ToString()}"))
+                .With(x => x.Article = Builder<Article>.CreateNew()
+                   
                     .Build())
-                .With(x => x.Tags = new List<string>{ "tag B2b76c22-1C92-4159-8Fcb-416F1c5854b5"})
+                .With(x => x.Metadata.Tags = new List<string>{ "tag B2b76c22-1C92-4159-8Fcb-416F1c5854b5"})
                 .Build();
     
 }

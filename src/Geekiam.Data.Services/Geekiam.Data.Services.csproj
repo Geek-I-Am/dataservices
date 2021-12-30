@@ -28,8 +28,8 @@
 
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="10.1.1" />
-      <PackageReference Include="Geekiam.Database" Version="0.1.8" />
-      <PackageReference Include="Geekiam.Database.Entities" Version="0.1.8" />
+      <PackageReference Include="Geekiam.Database" Version="0.1.9" />
+      <PackageReference Include="Geekiam.Database.Entities" Version="0.1.9" />
       <PackageReference Include="Threenine.Data" Version="2.1.8" />
     </ItemGroup>
 

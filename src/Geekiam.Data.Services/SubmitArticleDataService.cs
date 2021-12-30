@@ -1,23 +1,22 @@
-﻿using System.Globalization;
-using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Runtime.CompilerServices;
 using AutoMapper;
 using Geekiam.Database.Entities;
 using Geekiam.Domain.Mapping;
 using Geekiam.Domain.Requests.Posts;
 using Geekiam.Domain.Responses.Posts;
 using Threenine.Data;
+using Article = Geekiam.Domain.Responses.Posts.Article;
 
 [assembly: InternalsVisibleTo("Geekiam.Data.Services.Unit.Tests")]
 
 namespace Geekiam.Data.Services;
 
-public class PostsDataService : IDataService<Submission, Submitted>
+public class SubmitArticleDataService : BaseDataService, IDataService<Submission, Submitted>
 {
     private readonly IMapper _mapper;
     private readonly IUnitOfWork _unitOfWork;
 
-    public PostsDataService(IUnitOfWork unitOfWork)
+    public SubmitArticleDataService(IUnitOfWork unitOfWork)
     {
         var mapperConfiguration =
             new MapperConfiguration(configuration => configuration.AddProfile<PostsServiceMappingProfile>());
@@ -32,10 +31,10 @@ public class PostsDataService : IDataService<Submission, Submitted>
         var articlesRepository = _unitOfWork.GetRepository<Articles>();
         articlesRepository.Insert(article.Created());
         await _unitOfWork.CommitAsync();
-        if (aggregate.Tags != null) SaveTags(aggregate.Tags.ToList(), article.Id);
-        if (aggregate.Categories != null) SaveCategories(aggregate.Categories.ToList(), article.Id);
+        if (aggregate.Metadata.Tags != null) SaveTags(aggregate.Metadata.Tags.ToList(), article.Id);
+        if (aggregate.Metadata.Categories != null) SaveCategories(aggregate.Metadata.Categories.ToList(), article.Id);
 
-        return new Submitted() { Article = new Article(article.Title, new Uri(article.Url)) };
+        return new Submitted { Article = new Article(article.Title, new Uri(article.Url)) };
     }
 
     private void SaveCategories(List<string> categories, Guid articleId)
@@ -81,59 +80,6 @@ public class PostsDataService : IDataService<Submission, Submitted>
         });
     }
 
-    internal static string TransformTag(string tag)
-    {
-        var sb = new StringBuilder();
-
-        var words = tag.Trim().Split(' ');
-
-        if (words.Length < 1)
-            return sb.Append(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(tag.ToLower().Trim())).ToString();
-        foreach (var word in words)
-        {
-            sb.Append(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(word.Trim().ToLower()));
-        }
-
-        return sb.ToString();
-    }
-
-    internal static string TransformPermalink(string tag)
-    {
-        var sb = new StringBuilder();
-
-        var words = tag.Trim().Split(' ');
-
-        if (words.Length < 1) return sb.Append(tag.ToLower().Trim()).ToString();
-
-        for (var i = 0; i < words.Length; i++)
-        {
-            if (i == words.Length)
-            {
-                sb.Append($"{words[i]}");
-            }
-            else
-            {
-                if (!string.IsNullOrWhiteSpace(words[i])) sb.Append($"{words[i]}-");
-            }
-        }
-
-        return sb.ToString().TrimEnd('-');
-    }
-
-    internal static string TransformCategory(string text)
-    {
-        var sb = new StringBuilder();
-
-        var words = text.Trim().Split(' ');
-
-        if (words.Length < 1) return sb.Append(text.ToLower().Trim()).ToString();
-
-        foreach (var word in words)
-        {
-            if (!string.IsNullOrWhiteSpace(word))
-                sb.Append($" {CultureInfo.CurrentCulture.TextInfo.ToTitleCase(word.Trim().ToLower())}");
-        }
-
-        return sb.ToString().Trim();
-    }
+  
+    
 }

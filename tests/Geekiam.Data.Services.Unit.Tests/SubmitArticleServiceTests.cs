@@ -5,14 +5,14 @@ using Xunit;
 
 namespace Geekiam.Data.Services.Unit.Tests;
 
-public class PostsDataServiceTests
+public class SubmitArticleServiceTests
 {
-    private PostsDataService _classUnderTest;
+    private SubmitArticleDataService _classUnderTest;
     private Mock<IUnitOfWork> _unitOfWork = new();
 
-    public PostsDataServiceTests()
+    public SubmitArticleServiceTests()
     {
-        _classUnderTest = new PostsDataService(_unitOfWork.Object);
+        _classUnderTest = new SubmitArticleDataService(_unitOfWork.Object);
     }
     
     [Theory]
@@ -20,9 +20,10 @@ public class PostsDataServiceTests
     [InlineData("software development", "SoftwareDevelopment")]
     [InlineData("geek i am", "GeekIAm")]
     [InlineData("three  little  birds", "ThreeLittleBirds")]
+    [InlineData("this     should not     have      spaces", "ThisShouldNotHaveSpaces")]
     public void ShouldTransformTags(string testString, string expected)
     {
-        var result = PostsDataService.TransformTag(testString);
+        var result = SubmitArticleDataService.TransformTag(testString);
         
         result.ShouldBeEquivalentTo(expected);
     }
@@ -34,7 +35,7 @@ public class PostsDataServiceTests
     [InlineData("three  little  birds", "three-little-birds")]
     public void ShouldTransformPermalink(string testString, string expected)
     {
-        var result = PostsDataService.TransformPermalink(testString);
+        var result = SubmitArticleDataService.TransformPermalink(testString);
         
         result.ShouldBeEquivalentTo(expected);
     }
@@ -46,7 +47,7 @@ public class PostsDataServiceTests
     [InlineData("three  little  birds", "Three Little Birds")]
     public void ShouldTransformCategories(string testString, string expected)
     {
-        var result = PostsDataService.TransformCategory(testString);
+        var result = SubmitArticleDataService.TransformCategory(testString);
         
         result.ShouldBeEquivalentTo(expected);
     }
