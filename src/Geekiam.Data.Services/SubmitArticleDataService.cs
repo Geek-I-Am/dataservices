@@ -40,7 +40,7 @@ public class SubmitArticleDataService : BaseDataService, IDataService<Submission
     private void SaveCategories(List<string> categories, Guid articleId)
     {
         var categoriesRepository = _unitOfWork.GetRepository<Categories>();
-        var articleCategoriesRepository = _unitOfWork.GetRepository<ArticleCategories>();
+       
         categories.ForEach(category =>
         {
             var categoryName = TransformCategory(category);
@@ -52,9 +52,7 @@ public class SubmitArticleDataService : BaseDataService, IDataService<Submission
             var articleCategory = categoriesRepository.InsertNotExists(x => x.Name == categoryName, newCat);
             _unitOfWork.Commit();
 
-            var newArticleTagsCategory = new ArticleCategories
-                { ArticleId = articleId, CategoryId = articleCategory.Id };
-            articleCategoriesRepository.Insert(newArticleTagsCategory);
+            
             _unitOfWork.Commit();
         });
     }
@@ -62,7 +60,7 @@ public class SubmitArticleDataService : BaseDataService, IDataService<Submission
     private void SaveTags(List<string> tags, Guid articleId)
     {
         var tagsRepository = _unitOfWork.GetRepository<Tags>();
-        var articleTagsRepository = _unitOfWork.GetRepository<ArticleTags>();
+     
         tags.ForEach(tag =>
         {
             var tagName = TransformTag(tag);
@@ -74,8 +72,7 @@ public class SubmitArticleDataService : BaseDataService, IDataService<Submission
             var articleTag = tagsRepository.InsertNotExists(x => x.Name == tagName, newTag);
             _unitOfWork.Commit();
 
-            var newArticleTags = new ArticleTags { ArticleId = articleId, TagId = articleTag.Id };
-            articleTagsRepository.Insert(newArticleTags);
+         
             _unitOfWork.Commit();
         });
     }

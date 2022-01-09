@@ -19,8 +19,4 @@
         <PackageIconUrl>https://static.threenine.co.uk/geekiam.png</PackageIconUrl>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Tags" />
-    </ItemGroup>
-
 </Project>

@@ -33,6 +33,10 @@
     &lt;TestId&gt;xUnit::4CB20360-68A8-43E3-8744-F3B194C1AA5D::net6.0::Geekiam.Data.Services.Unit.Tests.SubmitArticleServiceTests.ShouldTransformCategories&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::A78494B8-A7FA-48BB-9F09-C62A242F2E6C::net6.0::Geekiam.Domain.Mapping.Tests.PostsServiceMappingProfileTests.ShouldMapSubmissionToArticles&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::7050ADED-16CF-4F9D-A1FB-AD3C8851C742::net6.0::Geekiam.Data.Services.Integration.Tests.SubmitArticleDataServiceTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::A78494B8-A7FA-48BB-9F09-C62A242F2E6C::net6.0::Geekiam.Domain.Mapping.Tests.TagMappingProfileTests.ShouldMapTagToTags&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::7050ADED-16CF-4F9D-A1FB-AD3C8851C742::net6.0::Geekiam.Data.Services.Integration.Tests.TagDataServiceTests.ShouldInsertNewArticle&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::A78494B8-A7FA-48BB-9F09-C62A242F2E6C::net6.0::Geekiam.Domain.Mapping.Tests.CategoryMappingProfileTests.ShouldMapTagToTags&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::7050ADED-16CF-4F9D-A1FB-AD3C8851C742::net6.0::Geekiam.Data.Services.Integration.Tests.CategoryDataServiceTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=faaf5633_002D1742_002D411a_002Dba02_002Db498ab7e7b0f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ShouldInsertNewArticle" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
