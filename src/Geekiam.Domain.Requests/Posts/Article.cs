@@ -1,3 +1,9 @@
 namespace Geekiam.Domain.Requests.Posts;
 
-public record Article(string Title, Uri Url);
+public class Article
+{
+    public string Title { get; set; }
+    public Uri Url { get; set; }
+    
+    
+}

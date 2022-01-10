@@ -14,7 +14,7 @@ public class TagMappingProfile : Profile
             .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
             .ForMember(dest => dest.Created, opt => opt.Ignore())
             .ForMember(dest => dest.Id, opt => opt.Ignore())
-            .ForMember(dest => dest.Articles, opt => opt.Ignore())
+            .ForMember(dest => dest.ArticleTags, opt => opt.Ignore())
             ;
     }
 }

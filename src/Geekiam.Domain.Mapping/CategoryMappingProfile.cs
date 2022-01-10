@@ -14,7 +14,7 @@ public class CategoryMappingProfile : Profile
             .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
             .ForMember(dest => dest.Created, opt => opt.Ignore())
             .ForMember(dest => dest.Id, opt => opt.Ignore())
-            .ForMember(dest => dest.Articles, opt => opt.Ignore())
+            .ForMember(dest => dest.ArticleCategories, opt => opt.Ignore())
             ;
     }
     

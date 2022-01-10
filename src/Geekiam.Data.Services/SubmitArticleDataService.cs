@@ -27,7 +27,7 @@ public class SubmitArticleDataService : BaseDataService, IDataService<Submission
 
     public async Task<Submitted> Process(Submission aggregate)
     {
-        var article = _mapper.Map<Articles>(aggregate.Article);
+        var article = _mapper.Map<Articles>(aggregate);
         var articlesRepository = _unitOfWork.GetRepository<Articles>();
         articlesRepository.Insert(article.Created());
         await _unitOfWork.CommitAsync();
@@ -52,6 +52,9 @@ public class SubmitArticleDataService : BaseDataService, IDataService<Submission
             var articleCategory = categoriesRepository.InsertNotExists(x => x.Name == categoryName, newCat);
             _unitOfWork.Commit();
 
+            var articleCategoriesRepository = _unitOfWork.GetRepository<ArticleCategories>();
+            articleCategoriesRepository.Insert(new ArticleCategories()
+                { ArticleId = articleId, CategoryId = articleCategory.Id });
             
             _unitOfWork.Commit();
         });
@@ -71,7 +74,9 @@ public class SubmitArticleDataService : BaseDataService, IDataService<Submission
 
             var articleTag = tagsRepository.InsertNotExists(x => x.Name == tagName, newTag);
             _unitOfWork.Commit();
-
+            var articleCategoriesRepository = _unitOfWork.GetRepository<ArticleTags>();
+            articleCategoriesRepository.Insert(new ArticleTags()
+                { ArticleId = articleId, TagId = articleTag.Id });
          
             _unitOfWork.Commit();
         });
