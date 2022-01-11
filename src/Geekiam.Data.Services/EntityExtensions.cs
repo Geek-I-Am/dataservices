@@ -4,7 +4,7 @@ namespace Geekiam.Data.Services;
 
 public static class EntityExtensions
 {
-    public static Articles Created(this Articles articles)
+    public static Articles Create(this Articles articles)
     {
         articles.Created = DateTime.Now;
         return articles;
