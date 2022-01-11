@@ -29,7 +29,7 @@ public class SubmitArticleDataService : BaseDataService, IDataService<Submission
     {
         var article = _mapper.Map<Articles>(aggregate);
         var articlesRepository = _unitOfWork.GetRepository<Articles>();
-        articlesRepository.Insert(article.Create());
+        articlesRepository.Insert(article.Created());
         await _unitOfWork.CommitAsync();
         if (aggregate.Metadata.Tags != null) SaveTags(aggregate.Metadata.Tags.ToList(), article.Id);
         if (aggregate.Metadata.Categories != null) SaveCategories(aggregate.Metadata.Categories.ToList(), article.Id);

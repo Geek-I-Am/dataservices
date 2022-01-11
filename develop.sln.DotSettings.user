@@ -56,7 +56,7 @@
     &lt;TestId&gt;xUnit::7050ADED-16CF-4F9D-A1FB-AD3C8851C742::net6.0::Geekiam.Data.Services.Integration.Tests.CategoryDataServiceTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=faaf5633_002D1742_002D411a_002Dba02_002Db498ab7e7b0f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ShouldInsertNewArticle" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=faaf5633_002D1742_002D411a_002Dba02_002Db498ab7e7b0f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ShouldInsertNewArticle" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;Or&gt;
     &lt;TestAncestor&gt;
       &lt;TestId&gt;xUnit::7050ADED-16CF-4F9D-A1FB-AD3C8851C742::net6.0::Geekiam.Data.Services.Integration.Tests.PostsDataServiceTests.ShouldInsertNewArticle&lt;/TestId&gt;
@@ -65,6 +65,7 @@
       &lt;TestId&gt;xUnit::A78494B8-A7FA-48BB-9F09-C62A242F2E6C::net6.0::Geekiam.Domain.Mapping.Tests.PostsServiceMappingProfileTests.ShouldMapSubmissionToArticles&lt;/TestId&gt;
       &lt;TestId&gt;xUnit::7050ADED-16CF-4F9D-A1FB-AD3C8851C742::net6.0::Geekiam.Data.Services.Integration.Tests.SubmitArticleDataServiceTests&lt;/TestId&gt;
       &lt;TestId&gt;xUnit::7050ADED-16CF-4F9D-A1FB-AD3C8851C742::net6.0::Geekiam.Data.Services.Integration.Tests.CategoryDataServiceTests&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::7050ADED-16CF-4F9D-A1FB-AD3C8851C742::net6.0::Geekiam.Data.Services.Integration.Tests.TagDataServiceTests&lt;/TestId&gt;
     &lt;/TestAncestor&gt;
     &lt;Project Location="/home/gary/threenine/geekiam/dataservice/tests/Geekiam.Data.Services.Unit.Tests" Presentation="&amp;lt;tests&amp;gt;\&amp;lt;Geekiam.Data.Services.Unit.Tests&amp;gt;" /&gt;
   &lt;/Or&gt;
