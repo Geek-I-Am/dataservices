@@ -26,7 +26,7 @@ public class CategoryDataService : IDataService<Category, Domain.Responses.Categ
         var newCat = _mapper.Map<Categories>(aggregate);
         var catRepository = _unitOfWork.GetRepository<Categories>();
 
-        var tag = catRepository.InsertNotExists(x => x.Name == newCat.Name, newCat.Create());
+        var tag = catRepository.InsertNotExists(x => x.Name == newCat.Name, newCat.Created());
         await _unitOfWork.CommitAsync();
 
         return new Domain.Responses.Categories.Category(tag.Name, tag.Permalink);

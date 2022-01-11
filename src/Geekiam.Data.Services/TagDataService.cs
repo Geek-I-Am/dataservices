@@ -26,7 +26,7 @@ public class TagDataService : IDataService<Geekiam.Domain.Requests.Tags.Tag, Dom
         var newTag = _mapper.Map<Tags>(aggregate);
         var tagRepository = _unitOfWork.GetRepository<Tags>();
 
-        var tag = tagRepository.InsertNotExists(x => x.Name == newTag.Name, newTag.Create());
+        var tag = tagRepository.InsertNotExists(x => x.Name == newTag.Name, newTag.Created());
         await _unitOfWork.CommitAsync();
 
         return new Tag(tag.Name, tag.Permalink);

@@ -4,22 +4,10 @@ namespace Geekiam.Data.Services;
 
 public static class EntityExtensions
 {
-    public static Articles Create(this Articles articles)
+    public static TEntity Created<TEntity>(this TEntity entity) where TEntity : BaseEntity
     {
-        articles.Created = DateTime.Now;
-        return articles;
+        entity.Created = DateTime.Now;
+        return entity;
     }
 
-    public static Tags Create(this Tags tags)
-    {
-        tags.Created = DateTime.Now;
-        return tags;
-    }
-    
-    public static Categories Create(this Categories category)
-    {
-        category.Created = DateTime.Now;
-        return category;
-    }
-    
 }
