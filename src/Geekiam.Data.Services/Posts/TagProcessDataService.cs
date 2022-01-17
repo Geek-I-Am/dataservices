@@ -4,15 +4,14 @@ using Geekiam.Domain.Mapping;
 using Geekiam.Domain.Responses.Tags;
 using Threenine.Data;
 
+namespace Geekiam.Data.Services.Posts;
 
-namespace Geekiam.Data.Services;
-
-public class TagDataService : IDataService<Geekiam.Domain.Requests.Tags.Tag, Domain.Responses.Tags.Tag>
+public class TagProcessDataService : IProcessDataService<Geekiam.Domain.Requests.Tags.Tag, Domain.Responses.Tags.Tag>
 {
     private readonly IMapper _mapper;
     private readonly IUnitOfWork _unitOfWork;
 
-    public TagDataService(IUnitOfWork unitOfWork)
+    public TagProcessDataService(IUnitOfWork unitOfWork)
     {
         var mapperConfiguration =
             new MapperConfiguration(configuration => configuration.AddProfile<TagMappingProfile>());
@@ -26,7 +25,7 @@ public class TagDataService : IDataService<Geekiam.Domain.Requests.Tags.Tag, Dom
         var newTag = _mapper.Map<Tags>(aggregate);
         var tagRepository = _unitOfWork.GetRepository<Tags>();
 
-        var tag = tagRepository.InsertNotExists(x => x.Name == newTag.Name, newTag.Created());
+        var tag = tagRepository.InsertNotExists(x => x.Name == newTag.Name, newTag);
         await _unitOfWork.CommitAsync();
 
         return new Tag(tag.Name, tag.Permalink);

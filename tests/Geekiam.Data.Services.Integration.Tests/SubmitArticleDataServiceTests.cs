@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FizzWare.NBuilder;
 using Geekiam.Data.Services.Integration.Tests.TestFixtures;
+using Geekiam.Data.Services.Posts;
 using Geekiam.Database;
 using Geekiam.Domain.Mapping;
 using Geekiam.Domain.Requests.Posts;
@@ -16,12 +17,12 @@ namespace Geekiam.Data.Services.Integration.Tests;
 [Collection(GlobalTestStrings.TestFixtureName)]
 public class SubmitArticleDataServiceTests
 {
-    private readonly SubmitArticleDataService _classUnderTest;
+    private readonly SubmitArticleProcessDataService _classUnderTest;
 
     public SubmitArticleDataServiceTests(SqlLiteTestFixture fixture)
     {
         IUnitOfWork unitOfWork = new UnitOfWork<GeekiamContext>(fixture.Context);
-        _classUnderTest = new SubmitArticleDataService(unitOfWork);
+        _classUnderTest = new SubmitArticleProcessDataService(unitOfWork);
     }
     
     [Fact]
@@ -34,7 +35,7 @@ public class SubmitArticleDataServiceTests
     [Fact]
     public async Task ShouldInsertNewArticleWithExistingTags()
     {
-        var result = await _classUnderTest.Process(TestSubmissionWithExistingTags);
+        var result = await _classUnderTest.Process(TestSubmission);
         result.ShouldNotBeNull();
     }
 
@@ -44,16 +45,9 @@ public class SubmitArticleDataServiceTests
             .With(x => x.Body = Builder<Body>.CreateNew().Build())
             .With(x => x.Metadata = Builder<Metadata>.CreateNew()
                 .With(x => x.Categories = new List<string>(){"software development" , "development"})
-                .With(x => x.Tags = new List<string>(){"BITCOIN", "c-sharp"})
+                .With(x => x.Tags = new List<string>(){"bitcoin", "c-sharp"})
                 .Build())
-           
             .Build();
     
-      private static Submission TestSubmissionWithExistingTags => Builder<Submission>.CreateNew()
-                .With(x => x.Article = Builder<Article>.CreateNew()
-                    
-                    .Build())
-                .With(x => x.Metadata.Tags = new List<string>{ "tag B2b76c22-1C92-4159-8Fcb-416F1c5854b5"})
-                .Build();
     
 }

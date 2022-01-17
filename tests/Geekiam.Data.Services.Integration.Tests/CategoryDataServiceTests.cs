@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using FizzWare.NBuilder;
 using Geekiam.Data.Services.Integration.Tests.TestFixtures;
+using Geekiam.Data.Services.Posts;
 using Geekiam.Database;
 using Geekiam.Domain.Requests.Categories;
 using Shouldly;
@@ -12,12 +13,12 @@ namespace Geekiam.Data.Services.Integration.Tests;
 [Collection(GlobalTestStrings.TestFixtureName)]
 public class CategoryDataServiceTests
 {
-    private readonly CategoryDataService _classUnderTest;
+    private readonly CategoryProcessDataService _classUnderTest;
 
     public CategoryDataServiceTests(SqlLiteTestFixture fixture)
     {
         IUnitOfWork unitOfWork = new UnitOfWork<GeekiamContext>(fixture.Context);
-        _classUnderTest = new CategoryDataService(unitOfWork);
+        _classUnderTest = new CategoryProcessDataService(unitOfWork);
     }
     
     [Fact]

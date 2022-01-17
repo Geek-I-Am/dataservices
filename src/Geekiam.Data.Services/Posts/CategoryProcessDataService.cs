@@ -4,15 +4,15 @@ using Geekiam.Domain.Mapping;
 using Geekiam.Domain.Requests.Categories;
 using Threenine.Data;
 
-namespace Geekiam.Data.Services;
+namespace Geekiam.Data.Services.Posts;
 
-public class CategoryDataService : IDataService<Category, Domain.Responses.Categories.Category>
+public class CategoryProcessDataService : IProcessDataService<Category, Domain.Responses.Categories.Category>
 {
     private readonly IMapper _mapper;
     private readonly IUnitOfWork _unitOfWork;
 
 
-    public CategoryDataService(IUnitOfWork unitOfWork)
+    public CategoryProcessDataService(IUnitOfWork unitOfWork)
     {
         var mapperConfiguration =
             new MapperConfiguration(configuration => configuration.AddProfile<CategoryMappingProfile>());
@@ -26,7 +26,7 @@ public class CategoryDataService : IDataService<Category, Domain.Responses.Categ
         var newCat = _mapper.Map<Categories>(aggregate);
         var catRepository = _unitOfWork.GetRepository<Categories>();
 
-        var tag = catRepository.InsertNotExists(x => x.Name == newCat.Name, newCat.Created());
+        var tag = catRepository.InsertNotExists(x => x.Name == newCat.Name, newCat);
         await _unitOfWork.CommitAsync();
 
         return new Domain.Responses.Categories.Category(tag.Name, tag.Permalink);

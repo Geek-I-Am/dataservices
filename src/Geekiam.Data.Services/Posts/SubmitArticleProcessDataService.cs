@@ -9,14 +9,14 @@ using Article = Geekiam.Domain.Responses.Posts.Article;
 
 [assembly: InternalsVisibleTo("Geekiam.Data.Services.Unit.Tests")]
 
-namespace Geekiam.Data.Services;
+namespace Geekiam.Data.Services.Posts;
 
-public class SubmitArticleDataService : BaseDataService, IDataService<Submission, Submitted>
+public class SubmitArticleProcessDataService : BaseDataService, IProcessDataService<Submission, Submitted>
 {
     private readonly IMapper _mapper;
     private readonly IUnitOfWork _unitOfWork;
 
-    public SubmitArticleDataService(IUnitOfWork unitOfWork)
+    public SubmitArticleProcessDataService(IUnitOfWork unitOfWork)
     {
         var mapperConfiguration =
             new MapperConfiguration(configuration => configuration.AddProfile<PostsServiceMappingProfile>());
@@ -29,7 +29,7 @@ public class SubmitArticleDataService : BaseDataService, IDataService<Submission
     {
         var article = _mapper.Map<Articles>(aggregate);
         var articlesRepository = _unitOfWork.GetRepository<Articles>();
-        articlesRepository.Insert(article.Created());
+        articlesRepository.Insert(article);
         await _unitOfWork.CommitAsync();
         if (aggregate.Metadata.Tags != null) SaveTags(aggregate.Metadata.Tags.ToList(), article.Id);
         if (aggregate.Metadata.Categories != null) SaveCategories(aggregate.Metadata.Categories.ToList(), article.Id);

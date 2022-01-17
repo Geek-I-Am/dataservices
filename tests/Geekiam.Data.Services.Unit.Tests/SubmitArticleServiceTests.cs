@@ -1,3 +1,4 @@
+using Geekiam.Data.Services.Posts;
 using Moq;
 using Shouldly;
 using Threenine.Data;
@@ -7,12 +8,12 @@ namespace Geekiam.Data.Services.Unit.Tests;
 
 public class SubmitArticleServiceTests
 {
-    private SubmitArticleDataService _classUnderTest;
+    private SubmitArticleProcessDataService _classUnderTest;
     private Mock<IUnitOfWork> _unitOfWork = new();
 
     public SubmitArticleServiceTests()
     {
-        _classUnderTest = new SubmitArticleDataService(_unitOfWork.Object);
+        _classUnderTest = new SubmitArticleProcessDataService(_unitOfWork.Object);
     }
     
     [Theory]
@@ -23,7 +24,7 @@ public class SubmitArticleServiceTests
     [InlineData("this     should not     have      spaces", "ThisShouldNotHaveSpaces")]
     public void ShouldTransformTags(string testString, string expected)
     {
-        var result = SubmitArticleDataService.TransformTag(testString);
+        var result = SubmitArticleProcessDataService.TransformTag(testString);
         
         result.ShouldBeEquivalentTo(expected);
     }
@@ -35,7 +36,7 @@ public class SubmitArticleServiceTests
     [InlineData("three  little  birds", "three-little-birds")]
     public void ShouldTransformPermalink(string testString, string expected)
     {
-        var result = SubmitArticleDataService.TransformPermalink(testString);
+        var result = SubmitArticleProcessDataService.TransformPermalink(testString);
         
         result.ShouldBeEquivalentTo(expected);
     }
@@ -47,7 +48,7 @@ public class SubmitArticleServiceTests
     [InlineData("three  little  birds", "Three Little Birds")]
     public void ShouldTransformCategories(string testString, string expected)
     {
-        var result = SubmitArticleDataService.TransformCategory(testString);
+        var result = SubmitArticleProcessDataService.TransformCategory(testString);
         
         result.ShouldBeEquivalentTo(expected);
     }
